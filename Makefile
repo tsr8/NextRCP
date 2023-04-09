@@ -2,6 +2,7 @@
 # later. See the COPYING file.
 # @author Bernhard Posselt <dev@bernhard-posselt.com>
 # @copyright Bernhard Posselt 2016
+# @copyright Tomasz W 2023
 
 # Generic Makefile for building and packaging a Nextcloud app which uses npm and
 # Composer.
