@@ -5,6 +5,8 @@ Place this app in **nextcloud/apps/**
 - create administration page (super admin)
 - create administration for selected users/groups (RCP admin)
 - move reports for RCP admins only
+- create API
+- add translations
 
 ## Building the app
 
