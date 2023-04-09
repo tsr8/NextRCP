@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>timetracker</id>
-    <name>Time Tracker</name>
+    <id>nextrcp</id>
+    <name>NextRCP</name>
     <summary lang="en">Track your time spent with different tasks, aggregate by project or clients!</summary>
-    <summary lang="de">Ein Zeitmesser für tägliche Aufgaben, mit Übersichten für Projekte oder Kunden!</summary>
+    <summary lang="pl">System rozliczania czasu pracy. Przeglądaj projekty i zadania, nad którymi pracujesz oraz ile czasu poświęcono danym klientom. Rozliczaj pracowników z faktycznie przepracowanych godzin.</summary>
     <description lang="en">
 Track your time spent with different tasks each day using this time tracker app! Features include:
 
@@ -21,29 +21,18 @@ This app is still under development, so stay tuned for updates and additional fe
 
 And for now, start making your time tracking easier by using this app! 
     </description>
-    <description lang="de">
-Behalte den Überblick über den Zeitaufwand täglicher Aufgaben mit dieser Time Tracker-App! Folgende Features erwarten dich:
-
-# Einträge anlegen
-Ein integrierter Timer macht es Dir leicht, neue Einträge hinzuzufügen. Mit einem Klick auf Start und Stopp werden die Zeiten automatisch aufgezeichnet! Vergessen, den Startknopf zu drücken? Kein Problem! Mit dem Manuellen Editor können Einträge auch nachträglich erstellt werden. Oder Einträge bearbeitet werden, falls die Zeiten nochmal angepasst werden müssen.
-
-# Projekte, Kunden und Tags
-Aufgaben können Projekten und Kunden zugeordnet werden. Dadurch lässt sich später einfach herausfinden, wie viel Zeit für ein spezifisches Projekt oder einen Kunden verwendet wurden. Und wenn das noch nicht genug ist, gibt es Tags, um Aufgaben auch Projekt- und Kundenübergreifend zu kategorisieren!
-
-# Den Überblick behalten
-Mit dem integrierten Dashboard lässt sich anhand eines Kuchen-/Donut-Diagramms leicht ein Gesamtbild bekommen, wie viel Zeit für ein bestimmtes Projekt verwendet wurde. Mit der Berichts- oder Timeline-Ansicht lassen sich zudem Aufgaben filtern, um Zeiten zu aggregieren!
-
-Diese App wird aktuell noch weiterentwickelt, also: Augen offen halten für neue Features! Und falls Dir irgendwelche Verbesserungsvorschläge, Probleme oder neue Features einfallen, schau mal auf unserem [GitHub Projekt](https://github.com/mtierltd/timetracker) vorbei, vielleicht wird Dein Thema bereits diskutiert! Und falls nicht, starte gerne eine neue Diskussion, wir freuen uns auf Dein Feedback!
+    <description lang="pl">
+	    DoZrobienia: opis po polsku.
     </description>
-    <version>0.0.79</version>
+    <version>0.0.1</version>
     <licence>agpl</licence>
-    <author mail="info@mtier.org" >MTier Ltd.</author>
-    <namespace>TimeTracker</namespace>
+    <author mail="nextrcp@cpdm.pl" >CPDM Ltd.</author>
+    <namespace>NextRCP</namespace>
     <documentation>
-	<admin>https://github.com/mtierltd/timetracker</admin>
+	<admin>https://github.com/tsr8/NextRCP</admin>
     </documentation>
     <category>tools</category>
-    <bugs>https://github.com/mtierltd/timetracker/issues</bugs>
+    <bugs>https://github.com/tsr8/NextRCP/issues</bugs>
     <screenshot>https://abload.de/img/bildschirmfotoam2021-u7j37.png</screenshot>
     <screenshot>https://abload.de/img/bildschirmfotoam2021-m0jq9.png</screenshot>
     <screenshot>https://abload.de/img/bildschirmfotoam2021-6dj9p.png</screenshot>
@@ -57,9 +46,9 @@ Diese App wird aktuell noch weiterentwickelt, also: Augen offen halten für neue
     </dependencies>
     <navigations>
         <navigation>
-            <name>Time Tracker</name>
+            <name>NextRCP</name>
             <order>10</order>
-            <route>timetracker.page.index</route>
+            <route>nextrcp.page.index</route>
         </navigation>
     </navigations>
 </info>
