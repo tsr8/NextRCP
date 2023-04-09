@@ -1,11 +1,11 @@
 {
-    "name": "mtierltd/timetracker",
-    "description": "Time Tracker App",
+    "name": "tsr8/NextRCP",
+    "description": "Time Settlement App",
     "type": "project",
     "license": "AGPL",
     "authors": [
         {
-            "name": "MTier Ltd."
+            "name": "CPDM sp. z o.o."
         }
     ],
     "require": {},
