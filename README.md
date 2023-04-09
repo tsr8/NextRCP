@@ -1,5 +1,10 @@
-# Time Tracker
+# NextRCP
 Place this app in **nextcloud/apps/**
+
+## ToDo
+- create administration page (super admin)
+- create administration for selected users/groups (RCP admin)
+- move reports for RCP admins only
 
 ## Building the app
 
