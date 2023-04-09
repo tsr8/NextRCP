@@ -1,4 +1,4 @@
 <?php
 
 
-$app = new \OCA\TimeTracker\AppInfo\Application();
+$app = new \OCA\NextRCP\AppInfo\Application();
