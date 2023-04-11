@@ -1,4 +1,4 @@
-<div id="timetracker-tags">
+<div id="nextrcp-tags">
     <h1 class='page-title'>Tags</h1>
     <div id="client-input-container" class='center'>
         <form>

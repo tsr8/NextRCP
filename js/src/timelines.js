@@ -115,7 +115,7 @@ var dtf = require("./dateformat.js");
             },
             ajax: { 
               tags: true,
-                url:  OC.generateUrl('/apps/timetracker/ajax/projects'),
+                url:  OC.generateUrl('/apps/nextrcp/ajax/projects'),
                 
                 dataType: 'json',
                 delay: 250,
@@ -151,7 +151,7 @@ var dtf = require("./dateformat.js");
           allowClear: true,
           ajax: { 
             tags: true,
-              url:  OC.generateUrl('/apps/timetracker/ajax/clients'),
+              url:  OC.generateUrl('/apps/nextrcp/ajax/clients'),
               
               dataType: 'json',
               delay: 250,
@@ -181,7 +181,7 @@ var dtf = require("./dateformat.js");
         
        
           function getReport(){
-              var baseUrl = OC.generateUrl('/apps/timetracker/ajax/report?name=&from='+start.unix()+'&to='+end.unix()+'&group1='+group1+'&group2='+group2+'&timegroup='+group3+'&filterProjectId='+filterProjectId+'&filterClientId='+filterClientId);
+              var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/report?name=&from='+start.unix()+'&to='+end.unix()+'&group1='+group1+'&group2='+group2+'&timegroup='+group3+'&filterProjectId='+filterProjectId+'&filterClientId='+filterClientId);
               function pad(n, width, z) {
                 z = z || '0';
                 n = n + '';
@@ -231,7 +231,7 @@ var dtf = require("./dateformat.js");
               },
               });
               $("#timeline-csv").off().click(function(){
-                var baseUrl = OC.generateUrl('/apps/timetracker/ajax/timeline');
+                var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/timeline');
                 $.post(baseUrl,   // url
                   { 
                     from: start.unix(),
@@ -248,7 +248,7 @@ var dtf = require("./dateformat.js");
                 return false;
             });
             $("#timeline-csv-email").off().click(function(){
-              var baseUrl = OC.generateUrl('/apps/timetracker/ajax/email-timeline');
+              var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/email-timeline');
               $.post(baseUrl,   // url
                 { 
                   from: start.unix(),
@@ -269,7 +269,7 @@ var dtf = require("./dateformat.js");
 
 
           function getTimelines(){
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/timelines');
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/timelines');
             function pad(n, width, z) {
               z = z || '0';
               n = n + '';
@@ -316,7 +316,7 @@ var dtf = require("./dateformat.js");
                   //cell - the cell component
                   //formatterParams - parameters set for the column
                   //onRendered - function to call when the formatter has been rendered
-                  var baseUrl = OC.generateUrl('/apps/timetracker/ajax/download-timeline/'+cell.getRow().getData()["id"]);
+                  var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/download-timeline/'+cell.getRow().getData()["id"]);
                   
                   return '<a href="'+baseUrl+'">'+"Download"+'</a>';
                   
@@ -334,7 +334,7 @@ var dtf = require("./dateformat.js");
                       buttons : {
                         "Confirm" : {
                           click: function() {
-                            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/email-timeline/'+cell.getRow().getData().id);
+                            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/email-timeline/'+cell.getRow().getData().id);
 
                             var jqxhr = $.post( baseUrl, {
                                   email:$('#email-address').val(),
@@ -372,7 +372,7 @@ var dtf = require("./dateformat.js");
                       buttons : {
                         "Confirm" : {
                           click: function() {
-                            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-timeline/'+cell.getRow().getData().id);
+                            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-timeline/'+cell.getRow().getData().id);
                             var jqxhr = $.post( baseUrl, function() {
                               getTimelines();
                               $("#dialog-confirm").dialog("close");

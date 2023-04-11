@@ -29,7 +29,7 @@ require('../../css/style.css');
         $("#new-client-submit").click(function () {
             if ($("#new-client-input").val().trim() == '')
               return false;
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-client/'+$("#new-client-input").val());
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-client/'+$("#new-client-input").val());
             var jqxhr = $.post( baseUrl, function() {
                 getClients();
                 $(dialogClientEditForm).dialog("close");
@@ -77,7 +77,7 @@ require('../../css/style.css');
         function editClient(dialogClientEditForm){
             var target = dialogClientEditForm.target;
             var form =  dialogClientEditForm.find( "form" );
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/edit-client/'+target);
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/edit-client/'+target);
             var jqxhr = $.post( baseUrl, {name:form.find("#name").val()},function() {
                 getClients();
                 $(dialogClientEditForm).dialog("close");
@@ -98,7 +98,7 @@ require('../../css/style.css');
         }
 
         function getClients(){
-          var baseUrl = OC.generateUrl('/apps/timetracker/ajax/clients');
+          var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/clients');
 
           var editIcon = function(cell, formatterParams){ //plain text value
             return "<i class='fa fa-edit'></i>";
@@ -112,7 +112,7 @@ require('../../css/style.css');
                $("#dialog-confirm").dialog({
                 buttons : {
                   "Confirm" : {click: function() {
-                    var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-client/'+cell.getRow().getData().id);
+                    var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-client/'+cell.getRow().getData().id);
                         var jqxhr = $.post( baseUrl, function() {
                             getClients();
                             $("#dialog-confirm").dialog("close");

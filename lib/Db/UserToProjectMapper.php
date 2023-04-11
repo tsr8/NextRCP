@@ -1,21 +1,21 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class UserToProjectMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_user_to_project');
+        parent::__construct($db, 'nextrcp_user_to_project');
     }
 
 
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_project` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_project` ' .
             'WHERE `id` = ?';
             
             try {
@@ -28,7 +28,7 @@ class UserToProjectMapper extends CompatibleMapper {
     }
 
     public function findAllForUser($uid) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_project` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_project` ' .
             'WHERE `user_uid` = ?';
             
             try {
@@ -40,7 +40,7 @@ class UserToProjectMapper extends CompatibleMapper {
         
     }
     public function findAllForProject($pid) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_project` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_project` ' .
             'WHERE `project_id` = ?';
             
             try {
@@ -52,7 +52,7 @@ class UserToProjectMapper extends CompatibleMapper {
         
     }
     public function findForUserAndProject($uid, $project) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_project` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_project` ' .
             'WHERE `user_uid` = ? and project_id = ?';
             
             try {
@@ -64,7 +64,7 @@ class UserToProjectMapper extends CompatibleMapper {
         
     }
     public function deleteAllForProject($project_id) {
-        $sql = 'delete FROM `*PREFIX*timetracker_user_to_project` ' .
+        $sql = 'delete FROM `*PREFIX*nextrcp_user_to_project` ' .
             ' where project_id = ?';
             
             try {

@@ -1,4 +1,4 @@
-<div id="timetracker-dashboard" class='theme-white'>
+<div id="nextrcp-dashboard" class='theme-white'>
     <h1 class='page-title'>Dashboard</h1>
 
 

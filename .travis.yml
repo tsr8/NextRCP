@@ -45,9 +45,9 @@ before_script:
     - cd nextcloud
     - mkdir data
     - ./occ maintenance:install --database-name oc_autotest --database-user oc_autotest --admin-user admin --admin-pass admin --database $DB --database-pass=''
-    - ./occ app:enable timetracker
+    - ./occ app:enable nextrcp
     - php -S localhost:8080 &
-    - cd apps/timetracker
+    - cd apps/nextrcp
 
 script:
     - make test

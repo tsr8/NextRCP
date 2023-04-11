@@ -17,7 +17,7 @@ Assign tasks to projects and clients! This allows you to display aggregated dura
 # Lost track of your work time?
 No problem! Just use the Dashboard view to display a nice donut / pie chart of your tasks! Or filter for tasks in the Reports or Timeline view to display total or aggregated values.
 
-This app is still under development, so stay tuned for updates and additional features! If you have any suggestions, bug reports or feature requests, feel free to head over to our [GitHub project page](https://github.com/mtierltd/timetracker) and search through the existing issues, maybe your topic is already under discussion! And if it's not, feel free to file a new issue for it.
+This app is still under development, so stay tuned for updates and additional features! If you have any suggestions, bug reports or feature requests, feel free to head over to our [GitHub project page](https://github.com/mtierltd/nextrcp) and search through the existing issues, maybe your topic is already under discussion! And if it's not, feel free to file a new issue for it.
 
 And for now, start making your time tracking easier by using this app! 
     </description>
@@ -26,7 +26,7 @@ And for now, start making your time tracking easier by using this app!
     </description>
     <version>0.0.1</version>
     <licence>agpl</licence>
-    <author mail="nextrcp@cpdm.pl" >CPDM Ltd.</author>
+    <author mail="nextrcp@cpdm.pl">CPDM sp. z o.o.</author>
     <namespace>NextRCP</namespace>
     <documentation>
 	<admin>https://github.com/tsr8/NextRCP</admin>

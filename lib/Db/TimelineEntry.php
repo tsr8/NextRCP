@@ -1,6 +1,6 @@
 <?php
 // db/author.php
-namespace  OCA\TimeTracker\Db;
+namespace  OCA\NextRCP\Db;
 
 use OCP\AppFramework\Db\Entity;
 

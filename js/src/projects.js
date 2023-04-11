@@ -84,7 +84,7 @@ require('../../css/piklor.css');
               placeholder: 'Select client...',
               allowClear: true,
               ajax: { 
-                url:  OC.generateUrl('/apps/timetracker/ajax/clients'),
+                url:  OC.generateUrl('/apps/nextrcp/ajax/clients'),
                 
                 dataType: 'json',
                 delay: 250,
@@ -117,7 +117,7 @@ require('../../css/piklor.css');
             }
             if ($("#new-project-input").val().trim() == '')
               return false;
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-project/'+$("#new-project-input").val());
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-project/'+$("#new-project-input").val());
             var jqxhr = $.post( baseUrl, {clientId:clientId, color:selectedColor} ,function() {
                 getProjects();
                 $(dialogProjectEditForm).dialog("close");
@@ -179,7 +179,7 @@ require('../../css/piklor.css');
                 placeholder: "Select tags...",
                 allowClear: true,
                 ajax: { 
-                  url:  OC.generateUrl('/apps/timetracker/ajax/tags'),
+                  url:  OC.generateUrl('/apps/nextrcp/ajax/tags'),
                   formatNoMatches: function() {
                     return '';
                 },
@@ -245,7 +245,7 @@ require('../../css/piklor.css');
                 placeholder: 'Select client...',
                 allowClear: true,
                 ajax: { 
-                  url:  OC.generateUrl('/apps/timetracker/ajax/clients'),
+                  url:  OC.generateUrl('/apps/nextrcp/ajax/clients'),
                   
                   dataType: 'json',
                   delay: 250,
@@ -309,7 +309,7 @@ require('../../css/piklor.css');
         function editProject(dialogProjectEditForm){
             var target = dialogProjectEditForm.target;
             var form =  dialogProjectEditForm.find( "form" );
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/edit-project/'+target.getData().id);
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/edit-project/'+target.getData().id);
             var jqxhr = $.post( baseUrl, {
                                         name:form.find("#name").val(), 
                                         clientId:form.find("#client-select-popup").val(), 
@@ -336,7 +336,7 @@ require('../../css/piklor.css');
         function deleteProject(dialogProjectEditForm){
           var target = dialogProjectEditForm.target;
           var form =  dialogProjectEditForm.find( "form" );
-          var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-project-with-data/'+target.getData().id);
+          var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-project-with-data/'+target.getData().id);
           var jqxhr = $.post( baseUrl, {name:form.find("#name").val(), clientId:form.find("#client-select-popup").val(), locked:form.find("#locked").is(':checked')?'1':'0',archived:form.find("#archived").is(':checked')?'1':'0',  allowedTags:form.find("#locked-select-tags").val(), allowedUsers:form.find("#locked-select-users").val() },function() {
               getProjects();
               $(dialogProjectEditForm).dialog("close");
@@ -353,7 +353,7 @@ require('../../css/piklor.css');
 
       }
         function getProjects(){
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/projects-table');
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/projects-table');
          
             var columns = [
               //{title:"Id", field:"id", width:100}, //column has a fixed width of 100px;
@@ -413,7 +413,7 @@ require('../../css/piklor.css');
                   var tags = row.getData().origAllowedTags.map(function(e){ return e.id;});
                   var users = row.getData().allowedUsers;
                   
-                  $.ajax(OC.generateUrl('/apps/timetracker/ajax/tags'), {
+                  $.ajax(OC.generateUrl('/apps/nextrcp/ajax/tags'), {
                     dataType: "json"
                   }).done(function(data) { 
                     $('#locked-select-tags').html('');

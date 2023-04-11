@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OCA\TimeTracker\Migration;
+namespace OCA\NextRCP\Migration;
 
 use Closure;
 use OCP\DB\ISchemaWrapper;
@@ -30,8 +30,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		if (!$schema->hasTable('timetracker_client')) {
-			$table = $schema->createTable('timetracker_client');
+		if (!$schema->hasTable('nextrcp_client')) {
+			$table = $schema->createTable('nextrcp_client');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -48,8 +48,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id']);
 		}
 
-		if (!$schema->hasTable('timetracker_project')) {
-			$table = $schema->createTable('timetracker_project');
+		if (!$schema->hasTable('nextrcp_project')) {
+			$table = $schema->createTable('nextrcp_project');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -89,8 +89,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id']);
 		}
 
-		if (!$schema->hasTable('timetracker_user_to_project')) {
-			$table = $schema->createTable('timetracker_user_to_project');
+		if (!$schema->hasTable('nextrcp_user_to_project')) {
+			$table = $schema->createTable('nextrcp_user_to_project');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -121,8 +121,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id'], 'tt_u_to_p_id_idx');
 		}
 
-		if (!$schema->hasTable('timetracker_user_to_client')) {
-			$table = $schema->createTable('timetracker_user_to_client');
+		if (!$schema->hasTable('nextrcp_user_to_client')) {
+			$table = $schema->createTable('nextrcp_user_to_client');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -153,8 +153,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id'], 'tt_u_t_c_id_idx');
 		}
 
-		if (!$schema->hasTable('timetracker_work_interval')) {
-			$table = $schema->createTable('timetracker_work_interval');
+		if (!$schema->hasTable('nextrcp_work_interval')) {
+			$table = $schema->createTable('nextrcp_work_interval');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -192,8 +192,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id'], 'tt_w_i_id_idx');
 		}
 
-		if (!$schema->hasTable('timetracker_tag')) {
-			$table = $schema->createTable('timetracker_tag');
+		if (!$schema->hasTable('nextrcp_tag')) {
+			$table = $schema->createTable('nextrcp_tag');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -215,8 +215,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 		}
 
 		
-		if (!$schema->hasTable('timetracker_lpa_tags')) {
-			$table = $schema->createTable('timetracker_lpa_tags');
+		if (!$schema->hasTable('nextrcp_lpa_tags')) {
+			$table = $schema->createTable('nextrcp_lpa_tags');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -237,8 +237,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id']);
 		}
 
-		if (!$schema->hasTable('timetracker_workint_to_tag')) {
-			$table = $schema->createTable('timetracker_workint_to_tag');
+		if (!$schema->hasTable('nextrcp_workint_to_tag')) {
+			$table = $schema->createTable('nextrcp_workint_to_tag');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -259,8 +259,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
                         $table->setPrimaryKey(['id'], 'tt_wi_to_tag_id_idx');
 		}
 
-		if (!$schema->hasTable('timetracker_timeline_entry')) {
-			$table = $schema->createTable('timetracker_timeline_entry');
+		if (!$schema->hasTable('nextrcp_timeline_entry')) {
+			$table = $schema->createTable('nextrcp_timeline_entry');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -301,8 +301,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id'], 'tt_t_e_id_idx');
 		}
 
-		if (!$schema->hasTable('timetracker_timeline')) {
-			$table = $schema->createTable('timetracker_timeline');
+		if (!$schema->hasTable('nextrcp_timeline')) {
+			$table = $schema->createTable('nextrcp_timeline');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -351,8 +351,8 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 			$table->setPrimaryKey(['id']);
 		}
 
-		if (!$schema->hasTable('timetracker_goal')) {
-			$table = $schema->createTable('timetracker_goal');
+		if (!$schema->hasTable('nextrcp_goal')) {
+			$table = $schema->createTable('nextrcp_goal');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -391,18 +391,18 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
          * @since 13.0.0
          */
         public function postSchemaChange(IOutput $output, \Closure $schemaClosure, array $options): void {
-		$this->moveTimeTrackerWorkIntervalToTag();
-		$this->moveTimeTrackerLockedProjectAllowedTag();
+		$this->moveNextRCPWorkIntervalToTag();
+		$this->moveNextRCPLockedProjectAllowedTag();
 	}
 
-	protected function moveTimeTrackerWorkIntervalToTag(): void {
-                if (!$this->connection->tableExists('timetracker_workint_to_tag') ||
-                    !$this->connection->tableExists('timetracker_workinterval_to_tag')) {
+	protected function moveNextRCPWorkIntervalToTag(): void {
+                if (!$this->connection->tableExists('nextrcp_workint_to_tag') ||
+                    !$this->connection->tableExists('nextrcp_workinterval_to_tag')) {
                         return;
                 }
 
                 $insert = $this->connection->getQueryBuilder();
-                $insert->insert('timetracker_workint_to_tag')
+                $insert->insert('nextrcp_workint_to_tag')
                         ->values([
                                 'id' => $insert->createParameter('id'),
                                 'work_interval_id' => $insert->createParameter('work_interval_id'),
@@ -412,7 +412,7 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 
                 $query = $this->connection->getQueryBuilder();
                 $query->select('*')
-                        ->from('timetracker_workint_to_tag');
+                        ->from('nextrcp_workint_to_tag');
                 $result = $query->execute();
                 if ($result->fetch()) {
                         $result->closeCursor();
@@ -421,7 +421,7 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 
                 $query = $this->connection->getQueryBuilder();
                 $query->select('*')
-                        ->from('timetracker_workinterval_to_tag');
+                        ->from('nextrcp_workinterval_to_tag');
                 $result = $query->execute();
 
                 while ($row = $result->fetch()) {
@@ -436,14 +436,14 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
                 $result->closeCursor();
         }
 
-	protected function moveTimeTrackerLockedProjectAllowedTag(): void {
-                if (!$this->connection->tableExists('timetracker_lpa_tags') ||
-                    !$this->connection->tableExists('timetracker_locked_project_allowed_tag')) {
+	protected function moveNextRCPLockedProjectAllowedTag(): void {
+                if (!$this->connection->tableExists('nextrcp_lpa_tags') ||
+                    !$this->connection->tableExists('nextrcp_locked_project_allowed_tag')) {
                         return;
                 }
 
                 $insert = $this->connection->getQueryBuilder();
-                $insert->insert('timetracker_lpa_tags')
+                $insert->insert('nextrcp_lpa_tags')
                         ->values([
                                 'id' => $insert->createParameter('id'),
                                 'project_id' => $insert->createParameter('project_id'),
@@ -453,7 +453,7 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 
                 $query = $this->connection->getQueryBuilder();
                 $query->select('*')
-                        ->from('timetracker_lpa_tags');
+                        ->from('nextrcp_lpa_tags');
                 $result = $query->execute();
                 if ($result->fetch()) {
                         $result->closeCursor();
@@ -462,7 +462,7 @@ class Version000000Date20210719124731 extends SimpleMigrationStep {
 
                 $query = $this->connection->getQueryBuilder();
                 $query->select('*')
-                        ->from('timetracker_locked_project_allowed_tag');
+                        ->from('nextrcp_locked_project_allowed_tag');
                 $result = $query->execute();
 
                 while ($row = $result->fetch()) {

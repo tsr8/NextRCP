@@ -42,7 +42,7 @@ require('../../css/style.css');
           },
           ajax: { 
             tags: true,
-              url:  OC.generateUrl('/apps/timetracker/ajax/projects'),
+              url:  OC.generateUrl('/apps/nextrcp/ajax/projects'),
               
               dataType: 'json',
               delay: 250,
@@ -69,7 +69,7 @@ require('../../css/style.css');
         $("#new-goal-submit").click(function () {
           if ($("#new-goal-hours").val().trim() == '')
               return false;
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-goal');
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-goal');
             var jqxhr = $.post( baseUrl, {
                   projectId : newGoalProjectId,
                   hours: $("#new-goal-hours").val(),
@@ -92,7 +92,7 @@ require('../../css/style.css');
         
         getGoals();
         function getGoals(){
-          var baseUrl = OC.generateUrl('/apps/timetracker/ajax/goals');
+          var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/goals');
 
           var editIcon = function(cell, formatterParams){ //plain text value
             return "<i class='fa fa-edit'></i>";
@@ -115,7 +115,7 @@ require('../../css/style.css');
                $("#dialog-confirm").dialog({
                 buttons : {
                   "Confirm" : {click: function() {
-                    var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-goal/'+cell.getRow().getData().id);
+                    var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-goal/'+cell.getRow().getData().id);
                         var jqxhr = $.post( baseUrl, function() {
                           getGoals();
                             $("#dialog-confirm").dialog("close");

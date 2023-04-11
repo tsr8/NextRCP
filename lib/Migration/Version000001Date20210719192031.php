@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OCA\TimeTracker\Migration;
+namespace OCA\NextRCP\Migration;
 
 use Closure;
 use OCP\DB\ISchemaWrapper;
@@ -22,11 +22,11 @@ class Version000001Date20210719192031 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
                 $schema = $schemaClosure();
 
-                if ($schema->hasTable('timetracker_project')) {
-                        $table = $schema->getTable('timetracker_project');
+                if ($schema->hasTable('nextrcp_project')) {
+                        $table = $schema->getTable('nextrcp_project');
                         if ($table->hasColumn('created_by_user_id')) {
-                                $schema->dropTable('timetracker_project');
-                                $table = $schema->createTable('timetracker_project');
+                                $schema->dropTable('nextrcp_project');
+                                $table = $schema->createTable('nextrcp_project');
                                 $table->addColumn('id', 'integer', [
                                         'autoincrement' => true,
                                         'notnull' => true,
@@ -67,11 +67,11 @@ class Version000001Date20210719192031 extends SimpleMigrationStep {
                         }
                 }
 
-                if ($schema->hasTable('timetracker_timeline_entry')) {
-                        $table = $schema->getTable('timetracker_timeline_entry');
+                if ($schema->hasTable('nextrcp_timeline_entry')) {
+                        $table = $schema->getTable('nextrcp_timeline_entry');
                         if ($table->hasColumn('user_id')) {
-                                $schema->dropTable('timetracker_timeline_entry');
-                                $table = $schema->createTable('timetracker_timeline_entry');
+                                $schema->dropTable('nextrcp_timeline_entry');
+                                $table = $schema->createTable('nextrcp_timeline_entry');
                                 $table->addColumn('id', 'integer', [
                                         'autoincrement' => true,
                                         'notnull' => true,

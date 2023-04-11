@@ -1,12 +1,12 @@
 <?php
 
-namespace OCA\TimeTracker\Tests\Unit\Controller;
+namespace OCA\NextRCP\Tests\Unit\Controller;
 
 use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Http\TemplateResponse;
 
-use OCA\TimeTracker\Controller\PageController;
+use OCA\NextRCP\Controller\PageController;
 
 
 class PageControllerTest extends PHPUnit_Framework_TestCase {
@@ -17,7 +17,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'timetracker', $request, $this->userId
+			'nextrcp', $request, $this->userId
 		);
 	}
 

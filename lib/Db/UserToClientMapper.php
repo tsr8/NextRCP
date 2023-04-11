@@ -1,21 +1,21 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class UserToClientMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_user_to_client');
+        parent::__construct($db, 'nextrcp_user_to_client');
     }
 
 
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_client` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_client` ' .
             'WHERE `id` = ?';
             
             try {
@@ -28,7 +28,7 @@ class UserToClientMapper extends CompatibleMapper {
     }
 
     public function findAllForUser($uid) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_client` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_client` ' .
             'WHERE `user_uid` = ?';
             
             try {
@@ -41,7 +41,7 @@ class UserToClientMapper extends CompatibleMapper {
     }
     
     public function findForUserAndClient($uid, $client) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_user_to_client` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_user_to_client` ' .
             'WHERE `user_uid` = ? and client_id = ?';
             
             try {

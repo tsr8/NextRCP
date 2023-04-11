@@ -23,7 +23,7 @@ require('../../css/style.css');
         $("#new-tag-submit").click(function () {
           if ($("#new-tag-input").val().trim() == '')
               return false;
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-tag/'+$("#new-tag-input").val());
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-tag/'+$("#new-tag-input").val());
             var jqxhr = $.post( baseUrl, function() {
 
                 getTags();
@@ -71,7 +71,7 @@ require('../../css/style.css');
         function editTag(dialogTagEditForm){
             var target = dialogTagEditForm.target;
             var form =  dialogTagEditForm.find( "form" );
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/edit-tag/'+target);
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/edit-tag/'+target);
             var jqxhr = $.post( baseUrl, {name:form.find("#name").val()},function() {
                 getTags();
                 $(dialogTagEditForm).dialog("close");
@@ -88,7 +88,7 @@ require('../../css/style.css');
 
         }
         function getTags(){
-          var baseUrl = OC.generateUrl('/apps/timetracker/ajax/tags');
+          var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/tags');
 
           var editIcon = function(cell, formatterParams){ //plain text value
             return "<i class='fa fa-edit'></i>";
@@ -102,7 +102,7 @@ require('../../css/style.css');
                $("#dialog-confirm").dialog({
                 buttons : {
                   "Confirm" : {click: function() {
-                    var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-tag/'+cell.getRow().getData().id);
+                    var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-tag/'+cell.getRow().getData().id);
                         var jqxhr = $.post( baseUrl, function() {
                             getTags();
                             $("#dialog-confirm").dialog("close");

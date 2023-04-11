@@ -48,7 +48,8 @@ appstore_build_directory=$(CURDIR)/build/artifacts/appstore
 appstore_package_name=$(appstore_build_directory)/$(app_name)
 npm=$(shell which npm 2> /dev/null)
 composer=$(shell which composer 2> /dev/null)
-php=$(shell which php-8.1 2> /dev/null) -dallow_url_fopen=On
+#php=$(shell which php-8.1 2> /dev/null) -dallow_url_fopen=On
+php=php -dallow_url_fopen=On
 
 COMPOSER_ARGS=--prefer-dist --no-dev
 

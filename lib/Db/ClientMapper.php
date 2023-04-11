@@ -1,21 +1,21 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class ClientMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_client');
+        parent::__construct($db, 'nextrcp_client');
     }
 
 
     public function findByName($name) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_client` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_client` ' .
             'WHERE upper(`name`) = ?';
 
             try {
@@ -32,19 +32,19 @@ class ClientMapper extends CompatibleMapper {
      * @throws \OCP\AppFramework\Db\MultipleObjectsReturnedException if more than one result
      */
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_client` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_client` ' .
             'WHERE `id` = ?';
         return $this->findEntity($sql, [$id]);
     }
 
     public function findAll($user){
-        $sql = 'SELECT tc.* FROM `*PREFIX*timetracker_client` tc left join `*PREFIX*timetracker_user_to_client` uc on uc.client_id = tc.id where uc.user_uid = ? order by tc.name asc';
+        $sql = 'SELECT tc.* FROM `*PREFIX*nextrcp_client` tc left join `*PREFIX*nextrcp_user_to_client` uc on uc.client_id = tc.id where uc.user_uid = ? order by tc.name asc';
         return $this->findEntities($sql, [$user]);
     }
 
     public function searchByName($user, $name){
         $name = strtoupper($name);
-        $sql = 'SELECT tc.* FROM `*PREFIX*timetracker_client` tc left join `*PREFIX*timetracker_user_to_client` uc on uc.client_id = tc.id where uc.user_uid = ? and upper(tc.name) LIKE ? order by tc.name asc';
+        $sql = 'SELECT tc.* FROM `*PREFIX*nextrcp_client` tc left join `*PREFIX*nextrcp_user_to_client` uc on uc.client_id = tc.id where uc.user_uid = ? and upper(tc.name) LIKE ? order by tc.name asc';
         return $this->findEntities($sql, [$user, "%" . $name . "%"]);
     }
 }

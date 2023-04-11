@@ -1,21 +1,21 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class GoalMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_goal');
+        parent::__construct($db, 'nextrcp_goal');
     }
 
 
     public function findByUserProject($userUid, $projectId) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_goal` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_goal` ' .
             'WHERE  `user_uid` = ? and `project_id` = ?';
             
             try {
@@ -32,14 +32,14 @@ class GoalMapper extends CompatibleMapper {
      * @throws \OCP\AppFramework\Db\MultipleObjectsReturnedException if more than one result
      */
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_goal` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_goal` ' .
             'WHERE `id` = ?';
         return $this->findEntity($sql, [$id]);
     }
 
 
     public function findAll($user){
-        $sql = 'SELECT tg.*,p.name as project_name FROM `*PREFIX*timetracker_goal` tg  join `*PREFIX*timetracker_project` p on p.id = tg.project_id where tg.user_uid = ? order by tg.created_at desc';
+        $sql = 'SELECT tg.*,p.name as project_name FROM `*PREFIX*nextrcp_goal` tg  join `*PREFIX*nextrcp_project` p on p.id = tg.project_id where tg.user_uid = ? order by tg.created_at desc';
         return $this->findEntities($sql, [$user]);
     }
 

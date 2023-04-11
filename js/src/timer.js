@@ -128,7 +128,7 @@ function() {
                   id: 'confirm-button',
                   text: "Confirm",
                   click: function() {
-                      var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-work-interval/'+encodeURIComponent(encodeURIComponent($('#name-manual-entry').val()))); // encode twice so we can have slashes
+                      var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-work-interval/'+encodeURIComponent(encodeURIComponent($('#name-manual-entry').val()))); // encode twice so we can have slashes
                       var jqxhr = $.post( baseUrl,
                             {
                               start:picker.data('daterangepicker').startDate.format('DD/MM/YY HH:mm'),
@@ -172,7 +172,7 @@ function() {
           var target = dialogWorkItemEditForm.target;
           var form =  dialogWorkItemEditForm.find( "form" );
           var id = $(target).data('myid');
-          var baseUrl = OC.generateUrl("/apps/timetracker/ajax/update-work-interval/"+id);
+          var baseUrl = OC.generateUrl("/apps/nextrcp/ajax/update-work-interval/"+id);
           var jqxhr = $.post( baseUrl, {name:form.find("#name").val(),details:form.find("#details").val()},function() {
               getWorkItems();
               $(dialogWorkItemEditForm).dialog("close");
@@ -221,7 +221,7 @@ function() {
             return moment.unix(ts).format(dtf.tformat());
         }
         function getWorkItems() {
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/work-intervals?from='+start.unix()+'&to='+end.unix()+'&tzoffset='+new Date().getTimezoneOffset());
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/work-intervals?from='+start.unix()+'&to='+end.unix()+'&tzoffset='+new Date().getTimezoneOffset());
             $.ajaxSetup({
               scriptCharset: "utf-8",
               //contentType: "application/json; charset=utf-8"
@@ -326,7 +326,7 @@ function() {
                    var input = $(this);
                    var cost = $(this).val();
                    var id = $(e.target).data('myid');
-                   var baseUrl = OC.generateUrl('/apps/timetracker/ajax/add-cost/' + id);
+                   var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/add-cost/' + id);
                    if (cost !== undefined) {
                        $.post(baseUrl, {cost: cost}, 'json').done(function (e) {
                            input.css('border', 'solid 1px green');
@@ -397,7 +397,7 @@ function() {
                     $("#dialog-confirm").dialog({
                         buttons : {
                           "Confirm" : function() {
-                            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/delete-work-interval/'+e.target.id);
+                            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/delete-work-interval/'+e.target.id);
                                 var jqxhr = $.post( baseUrl, function() {
                                     getWorkItems();
                                     $("#dialog-confirm").dialog("close");
@@ -421,7 +421,7 @@ function() {
                     return false;
                 });
 
-                var projectsAjaxUrl = OC.generateUrl('/apps/timetracker/ajax/projects');
+                var projectsAjaxUrl = OC.generateUrl('/apps/nextrcp/ajax/projects');
                 $(".set-project").each(function(){
                   //var interval = setInterval( function() {
 
@@ -480,7 +480,7 @@ function() {
                   //}.bind(this),0);
                 });
 
-                var tagsAjaxUrl = OC.generateUrl('/apps/timetracker/ajax/tags');
+                var tagsAjaxUrl = OC.generateUrl('/apps/nextrcp/ajax/tags');
                 $(".set-tag").each(function(){
                   //var interval = setInterval( function() {
 
@@ -605,7 +605,7 @@ function() {
             if (workName == ''){
                 workName = 'no description';
             }
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/start-timer/'+encodeURIComponent(encodeURIComponent(workName)));
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/start-timer/'+encodeURIComponent(encodeURIComponent(workName)));
             var jqxhr = $.post(baseUrl, { projectId: projectId, tags: tags}, function() {
                })
                .done(function(data, status, jqxhr) {
@@ -630,7 +630,7 @@ function() {
             if (workName == ''){
                 workName = 'no description';
             }
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/stop-timer/'+encodeURIComponent(encodeURIComponent(workName)));
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/stop-timer/'+encodeURIComponent(encodeURIComponent(workName)));
             var jqxhr = $.post(baseUrl, function() { // encode twice so we can pass / character
                })
                .done(function(data, status, jqXHR) {

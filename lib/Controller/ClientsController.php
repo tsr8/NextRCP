@@ -1,5 +1,5 @@
 <?php
-namespace OCA\TimeTracker\Controller;
+namespace OCA\NextRCP\Controller;
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
@@ -26,7 +26,7 @@ class ClientsController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		return new TemplateResponse('timetracker', 'index',['appPage' => 'content/clients', 'script' => 'dist/clients']);  // templates/index.php
+		return new TemplateResponse('nextrcp', 'index',['appPage' => 'content/clients', 'script' => 'dist/clients']);  // templates/index.php
 	}
 
 

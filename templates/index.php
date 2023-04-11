@@ -1,7 +1,7 @@
 <?php
-style('timetracker', 'all');
-style('timetracker', 'style');
-script('timetracker', $script);
+style('nextrcp', 'all');
+style('nextrcp', 'style');
+script('nextrcp', $script);
 
 ?>
 

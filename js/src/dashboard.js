@@ -90,7 +90,7 @@ var dtf = require("./dateformat.js");
             getData();
 
             function getData() {
-                var baseUrl = OC.generateUrl('/apps/timetracker/ajax/report?name=&from=' + start.unix() + '&to=' + end.unix() + '&group1=' + group1 + '&group2=' + group2 + '&timegroup=' + group3 + '&filterProjectId=' + filterProjectId + '&filterClientId=' + filterClientId);
+                var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/report?name=&from=' + start.unix() + '&to=' + end.unix() + '&group1=' + group1 + '&group2=' + group2 + '&timegroup=' + group3 + '&filterProjectId=' + filterProjectId + '&filterClientId=' + filterClientId);
                 var default_colors = [
                     '#3366CC',
                     '#DC3912',

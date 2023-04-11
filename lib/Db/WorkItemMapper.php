@@ -1,16 +1,16 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class WorkItemMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_work_item');
+        parent::__construct($db, 'nextrcp_work_item');
     }
 
 
@@ -22,7 +22,7 @@ class WorkItemMapper extends CompatibleMapper {
      
 
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_work_item` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_work_item` ' .
             'WHERE `id` = ?';
             try {
                 $e = $this->findEntity($sql, [$id]);
@@ -33,7 +33,7 @@ class WorkItemMapper extends CompatibleMapper {
     }
 
     public function findByName($name) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_work_item` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_work_item` ' .
             'WHERE `name` = ?';
             
             try {
@@ -47,7 +47,7 @@ class WorkItemMapper extends CompatibleMapper {
 
 
     public function findAll($limit=null, $offset=null) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_work_item`';
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_work_item`';
         return $this->findEntities($sql, $limit, $offset);
     }
 

@@ -1,11 +1,11 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class ReportItemMapper extends CompatibleMapper {
 
@@ -18,7 +18,7 @@ class ReportItemMapper extends CompatibleMapper {
         } else if (strpos(get_class($db->getDatabasePlatform()),'Sqlite') !== FALSE){
             $this->dbengine = 'SQLITE';
         }
-        parent::__construct($db, 'timetracker_work_interval');
+        parent::__construct($db, 'nextrcp_work_interval');
     }
 
 /*
@@ -153,9 +153,9 @@ class ReportItemMapper extends CompatibleMapper {
         }
 
         $selectItems = implode(", ",$selectFields).
-                ' FROM *PREFIX*timetracker_work_interval wi 
-                    left join *PREFIX*timetracker_project p on wi.project_id = p.id 
-                    left join *PREFIX*timetracker_client c on p.client_id = c.id';
+                ' FROM *PREFIX*nextrcp_work_interval wi 
+                    left join *PREFIX*nextrcp_project p on wi.project_id = p.id 
+                    left join *PREFIX*nextrcp_client c on p.client_id = c.id';
         $filters = [];
         $params = [];
         if (!empty($from)){

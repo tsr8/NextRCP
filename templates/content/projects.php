@@ -1,4 +1,4 @@
-<div id="timetracker-projects" class='theme-white'>
+<div id="nextrcp-projects" class='theme-white'>
     <h1 class='page-title'>Projects</h1>
     <div id="client-input-container" class='center'>
         <form>

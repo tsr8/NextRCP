@@ -1,21 +1,21 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class WorkIntervalToTagMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_workint_to_tag');
+        parent::__construct($db, 'nextrcp_workint_to_tag');
     }
 
 
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_workint_to_tag` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_workint_to_tag` ' .
             'WHERE `id` = ?';
             
             try {
@@ -28,7 +28,7 @@ class WorkIntervalToTagMapper extends CompatibleMapper {
     }
 
     public function findAllForWorkInterval($workIntervalId) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_workint_to_tag` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_workint_to_tag` ' .
             'WHERE `work_interval_id` = ?';
             
             try {
@@ -41,7 +41,7 @@ class WorkIntervalToTagMapper extends CompatibleMapper {
     }
 
     public function deleteAllForWorkInterval($workIntervalId) {
-        $sql = 'DELETE FROM `*PREFIX*timetracker_workint_to_tag` ' .
+        $sql = 'DELETE FROM `*PREFIX*nextrcp_workint_to_tag` ' .
             'WHERE `work_interval_id` = ?';
             
             try {
@@ -54,7 +54,7 @@ class WorkIntervalToTagMapper extends CompatibleMapper {
     }
 
     public function deleteAllForTag($tagId) {
-        $sql = 'DELETE FROM `*PREFIX*timetracker_workint_to_tag` ' .
+        $sql = 'DELETE FROM `*PREFIX*nextrcp_workint_to_tag` ' .
             'WHERE `tag_id` = ?';
             
             try {

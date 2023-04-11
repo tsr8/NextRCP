@@ -1,16 +1,16 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class TimelineMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_timeline');
+        parent::__construct($db, 'nextrcp_timeline');
     }
 
 
@@ -19,7 +19,7 @@ class TimelineMapper extends CompatibleMapper {
      * @throws \OCP\AppFramework\Db\MultipleObjectsReturnedException if more than one result
      */
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline` ' .
             'WHERE `id` = ?';
         return $this->findEntity($sql, [$id]);
     }
@@ -27,7 +27,7 @@ class TimelineMapper extends CompatibleMapper {
 
 
     public function findAll($uid) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline` ' .
             'WHERE `user_uid` = ?';
             
             try {
@@ -40,7 +40,7 @@ class TimelineMapper extends CompatibleMapper {
     }
 
     public function findLatest() {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline` ' .
             'order by created_at desc limit 100';
             
             try {
@@ -53,7 +53,7 @@ class TimelineMapper extends CompatibleMapper {
     }
 
     public function findByStatus($status) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline` ' .
             'WHERE `status` = ?';
             
             try {

@@ -1,4 +1,4 @@
-<div id="timetracker-content">
+<div id="nextrcp-content">
     <div id="top-work-bar">
         <div id="work-input-container">
             <form id="work-input-form">

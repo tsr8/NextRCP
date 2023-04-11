@@ -1,16 +1,16 @@
 <?php
 // db/authormapper.php
 
-namespace OCA\TimeTracker\Db;
+namespace OCA\NextRCP\Db;
 
 use OCP\IDBConnection;
 
-use OCA\TimeTracker\AppFramework\Db\CompatibleMapper;
+use OCA\NextRCP\AppFramework\Db\CompatibleMapper;
 
 class TimelineEntryMapper extends CompatibleMapper {
 
     public function __construct(IDBConnection $db) {
-        parent::__construct($db, 'timetracker_timeline_entry');
+        parent::__construct($db, 'nextrcp_timeline_entry');
     }
 
 
@@ -19,7 +19,7 @@ class TimelineEntryMapper extends CompatibleMapper {
      * @throws \OCP\AppFramework\Db\MultipleObjectsReturnedException if more than one result
      */
     public function find($id) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline_entry` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline_entry` ' .
             'WHERE `id` = ?';
         return $this->findEntity($sql, [$id]);
     }
@@ -27,7 +27,7 @@ class TimelineEntryMapper extends CompatibleMapper {
     /**
      */
     public function findTimelineEntries($tid) {
-        $sql = 'SELECT * FROM `*PREFIX*timetracker_timeline_entry` ' .
+        $sql = 'SELECT * FROM `*PREFIX*nextrcp_timeline_entry` ' .
             'WHERE `timeline_id` = ?';
         return $this->findEntities($sql, [$tid]);
     }

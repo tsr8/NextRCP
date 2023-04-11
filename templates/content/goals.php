@@ -1,4 +1,4 @@
-<div id="timetracker-goals">
+<div id="nextrcp-goals">
     <h1 class='page-title'>Goals</h1>
     <div id="client-input-container" class='center'>
         <form>

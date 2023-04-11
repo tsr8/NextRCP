@@ -98,7 +98,7 @@ var dtf = require("./dateformat.js");
             },
             ajax: {
               tags: true,
-                url:  OC.generateUrl('/apps/timetracker/ajax/projects'),
+                url:  OC.generateUrl('/apps/nextrcp/ajax/projects'),
 
                 dataType: 'json',
                 delay: 250,
@@ -135,7 +135,7 @@ var dtf = require("./dateformat.js");
           allowClear: true,
           ajax: {
             tags: true,
-              url:  OC.generateUrl('/apps/timetracker/ajax/clients'),
+              url:  OC.generateUrl('/apps/nextrcp/ajax/clients'),
 
               dataType: 'json',
               delay: 250,
@@ -168,7 +168,7 @@ var dtf = require("./dateformat.js");
 
 
           function getReport(){
-              var baseUrl = OC.generateUrl('/apps/timetracker/ajax/report?name=&from='+start.unix()+'&to='+end.unix()+'&group1='+group1+'&group2='+group2+'&timegroup='+group3+'&filterProjectId='+filterProjectId+'&filterClientId='+filterClientId);
+              var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/report?name=&from='+start.unix()+'&to='+end.unix()+'&group1='+group1+'&group2='+group2+'&timegroup='+group3+'&filterProjectId='+filterProjectId+'&filterClientId='+filterClientId);
               function pad(n, width, z) {
                 z = z || '0';
                 n = n + '';

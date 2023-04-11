@@ -47,7 +47,7 @@ require('../../css/style.css');
             function editTimeline(dialogTimelineEditForm){
                 var target = dialogTimelineEditForm.target;
                 var form =  dialogTimelineEditForm.find( "form" );
-                var baseUrl = OC.generateUrl('/apps/timetracker/ajax/edit-timeline/'+target.getData().id);
+                var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/edit-timeline/'+target.getData().id);
                 var jqxhr = $.post( baseUrl, {status:form.find("#status").val()},function() {
                     getTimelines();
                     $(dialogTimelineEditForm).dialog("close");
@@ -102,7 +102,7 @@ require('../../css/style.css');
                 return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
               }
 
-            var baseUrl = OC.generateUrl('/apps/timetracker/ajax/timelines-admin');
+            var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/timelines-admin');
             var table = new Tabulator("#timelines", {
               ajaxURL:baseUrl,
               layout:"fitColumns",
@@ -150,7 +150,7 @@ require('../../css/style.css');
                   //cell - the cell component
                   //formatterParams - parameters set for the column
                   //onRendered - function to call when the formatter has been rendered
-                  var baseUrl = OC.generateUrl('/apps/timetracker/ajax/download-timeline/'+cell.getRow().getData()["id"]);
+                  var baseUrl = OC.generateUrl('/apps/nextrcp/ajax/download-timeline/'+cell.getRow().getData()["id"]);
                   
                   return '<a href="'+baseUrl+'">'+"Download"+'</a>';
                   

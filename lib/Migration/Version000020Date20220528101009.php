@@ -24,7 +24,7 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\TimeTracker\Migration;
+namespace OCA\NextRCP\Migration;
 
 use Closure;
 use OCP\DB\ISchemaWrapper;
@@ -52,8 +52,8 @@ class Version000020Date20220528101009 extends SimpleMigrationStep {
 	 */
 	public function changeSchema(IOutput $output, Closure $schemaClosure, array $options): ?ISchemaWrapper {
         $schema = $schemaClosure();
-        if ($schema->hasTable('timetracker_work_interval')) {
-            $table = $schema->getTable('timetracker_work_interval');
+        if ($schema->hasTable('nextrcp_work_interval')) {
+            $table = $schema->getTable('nextrcp_work_interval');
             if (!$table->hasColumn('cost')) {
                 $table->addColumn('cost', 'integer', [
                     'notnull' => false,
